@@ -157,6 +157,26 @@
   .pb li{font-size:12.5px;line-height:1.55;border-bottom:1px dashed var(--line);padding:5px 0}
   @media(max-width:640px){.pb{grid-template-columns:1fr}}
   .master{border-left:3px solid var(--acc);background:var(--panel2);border-radius:0 6px 6px 0;padding:12px 16px;margin:10px 0}
+  .qa .a{display:none}
+  .qa.open .a{display:block}
+  .qa{cursor:pointer}
+  .qsearch{display:flex;align-items:center;gap:8px;margin:10px 0 2px}
+  .qsearch input{flex:0 0 340px;max-width:80%;background:var(--panel2);border:1px solid var(--line);border-radius:4px;color:var(--txt);font-family:var(--mono);font-size:12px;padding:8px 10px}
+  .qsearch input:focus{outline:none;border-color:var(--acc-dim)}
+  .qsearch .qs-hint{font-family:var(--mono);font-size:10.5px;color:var(--dim)}
+  .nohit{display:none;border:1px dashed var(--line);border-radius:6px;padding:14px 16px;margin-top:10px;color:var(--muted);font-size:12.5px}
+  .qgroup{scroll-margin-top:64px}
+  .mark{background:rgba(45,212,168,.18);border-radius:2px;padding:0 1px}
+  .ganchor{font-family:var(--mono);font-size:12px;color:var(--dim);text-decoration:none;margin-left:6px}
+  .ganchor:hover{color:var(--acc)}
+  details.bigpanel{border:1px solid var(--line);border-radius:6px;background:var(--panel);margin-top:6px}
+  details.bigpanel>summary{font-size:13.5px;font-weight:600;color:var(--txt);padding:12px 16px;cursor:pointer;user-select:none;list-style:none}
+  details.bigpanel>summary::-webkit-details-marker{display:none}
+  details.bigpanel>summary::before{content:"▸ ";color:var(--acc);font-family:var(--mono)}
+  details.bigpanel[open]>summary{border-bottom:1px solid var(--line)}
+  details.bigpanel[open]>summary::before{content:"▾ "}
+  details.bigpanel>summary .tag{margin-left:8px}
+  details.bigpanel .inner{padding:6px 16px 14px}
   .master p{font-size:13.5px;line-height:1.75;margin:0 0 10px}
   .master p:last-child{margin-bottom:0}
   .master .mk{font-family:var(--mono);font-size:9.5px;color:var(--acc);letter-spacing:.12em}
@@ -177,7 +197,7 @@
   <div class="wrap">
     <div class="kicker">PMBA6127 · A4 Press-Conference Workshop · Day 4 · 20%</div>
     <h1>COSCO <span class="x">×</span> HHLA <span style="color:var(--dim);font-weight:400">· Press Conference Companion</span></h1>
-    <div class="sub">Speaker side: COSCO Shipping Ports — background &amp; sincerity · stakeholders · speech · 19-question bank (9 audience groups) · anchor facts</div>
+    <div class="sub">Speaker side: COSCO Shipping Ports — background &amp; sincerity · stakeholders · speech · 23-question bank (9 audience groups) · anchor facts</div>
     </div>
 </header>
 
@@ -388,11 +408,12 @@
 
 <!-- ============ 4 Q&A ============ -->
 <section class="view" id="v-qa">
-  <h2>Press Conference Q&amp;A<span class="en">19 questions · grouped by audience group · second axis: major concerns (control · dependence · data security · jobs)</span></h2>
-  <div class="lead">By who asks — click any card to reveal the answer + strategy note. Filter by audience group or by concern theme; toggle Core-8 only. 先自答再翻卡，差距即练习点。本场时点 2022.10：答案避免引用 2023 之后的后见之明；"收购后计划"类问题以承诺口径作答。<span class="wen">Time lock: October 2022 — do not cite post-2023 hindsight in your answers; answer "post-acquisition plans" questions with commitments, not with history that has not happened yet.</span></div>
+  <h2>Press Conference Q&amp;A<span class="en">23 questions · grouped by audience group · second axis: major concerns (control · dependence · data security · jobs · other countries' failures)</span></h2>
+  <div class="lead">By who asks — click any card to reveal the answer + strategy note. Filter by audience group or by concern theme; toggle Core-8 only. 先自答再翻卡，差距即练习点；答案默认收起（点击问题卡展开，"翻开全部"可一键展开）；用上方搜索框按关键词实时定位问题。本场时点 2022.10：答案避免引用 2023 之后的后见之明；"收购后计划"类问题以承诺口径作答。<span class="wen">Time lock: October 2022 — no post-2023 hindsight. Answers are collapsed by default — click a card to reveal; use the search box to jump to any question.</span></div>
 
-  <div class="panel">
-    <h3>教授课件指引 · Dos &amp; Don'ts <span class="tag">PROFESSOR'S PLAYBOOK — Day 4 deck slides 6–9</span></h3>
+  <details class="bigpanel">
+    <summary>教授课件指引 · Dos &amp; Don'ts <span class="tag">PROFESSOR'S PLAYBOOK — Day 4 deck slides 6–9</span><span class="wen"> 点击展开 · click to open</span></summary>
+    <div class="inner">
     <div class="lead">Day 4 的精神：敌意记者会不是攻击，是期待被回应的焦虑——危机领导四任务（人心 → 意义 → 控制 → 未来）逐一落在这场发布会的每一分钟。<span class="wen">The Day 4 spirit: a hostile press conference is anxiety asking to be answered — the four crisis-leadership tasks (people → meaning → control → future) map onto every minute at this podium.</span></div>
     <div class="pb">
       <div class="do">
@@ -419,10 +440,12 @@
         </ul>
       </div>
     </div>
-  </div>
+    </div>
+  </details>
 
-  <div class="panel">
-    <h3>官方万能回复 · The Universal Response <span class="tag">RESPECTFUL ON ANY QUESTION — hostile · unanswerable · off-topic</span></h3>
+  <details class="bigpanel">
+    <summary>官方万能回复 · The Universal Response <span class="tag">RESPECTFUL ON ANY QUESTION — hostile · unanswerable · off-topic</span><span class="wen"> 点击展开 · click to open</span></summary>
+    <div class="inner">
     <div class="lead">面对刁难、难以回答或不相关的问题，先用这段守住尊重与边界。四步：<b>承认提问 → 划定边界 → 桥接事实 → 承诺跟进</b>。慢速Delivery，停顿本身也是官方语言的一部分。<span class="wen">For any hostile, hard-to-answer or off-topic question, hold respect and the boundary with this statement. Four moves: acknowledge the question, draw the boundary, bridge to facts, commit to follow up. Deliver slowly — the pauses are part of the language.</span></div>
     <div class="master">
       <p>[PAUSE] <span class="mk">1 · RESPECT</span><br>Thank you — and let me say first: we respect the question, and we respect the concern behind it.</p>
@@ -471,9 +494,29 @@
         <li>"Open trade has been our experience in more than a hundred countries — it is the environment we know how to work in."<span class="wen">— 以自身经验谈开放，不替任何国家立场上价值</span></li>
         <li>"We came as customers thirty-five years ago; we stayed as neighbours. That is the spirit we bring to this table."<span class="wen">— 中性收尾：客户→邻居的身份叙事，温度而不失分寸</span></li>
       </ul>
+      <h4>E2 · 具体问题具体分析 · Case-by-case — laws, companies, contexts</h4>
+      <ul>
+        <li>"Each investment must be judged on its own merits — its legal framework, its terms, its partners. Blanket judgments make poor analysis and poorer policy."<span class="wen">— 具体问题具体分析的定版句：构成要素（法律框架·条款·伙伴）点出来，再反盖"一刀切判断"</span></li>
+        <li>"Legal environments differ from country to country. That is not a caveat — it is the reason every one of our investments is structured under local law and reviewed by local authorities."<span class="wen">— 法律环境不同：把"各国法律不同"从托词翻成"正因如此每笔投资都按当地法架构、当地审查"</span></li>
+        <li>"Every company's situation is different — ownership, governance, track record, incentives. We ask to be assessed on ours, and we will answer for ours."<span class="wen">— 公司情况各异：股权·治理·记录·激励四要素；只请求按"我们的情况"被评估，并愿意逐项作答</span></li>
+        <li>"Context matters: a Greek port in a debt crisis, a Belgian terminal in an alliance shift, a Hamburg stake under German screening — different backgrounds, different structures, different outcomes."<span class="wen">— 背景不同：三个案例并列成"背景论"，主动把敏感先例纳入自己的叙事框架</span></li>
+        <li>"Comparison is useful only when it is like-for-like — same law, same structure, same terms. Otherwise it is rhetoric, not analysis."<span class="wen">— 对比须同类相比：法律·结构·条款三同才有可比性，否则是修辞不是分析</span></li>
+        <li>"We do not generalize from one case — and we would ask the same courtesy in return."<span class="wen">— 礼貌反将：我们不以个案概括全体，也请对方如此——克制而有分寸的回敬</span></li>
+        <li>"Specific questions deserve specific answers. Generalizations are where accuracy goes to die."<span class="wen">— 具体问题配具体答案：泛化是准确性的坟墓——记者会最硬的合法性话语</span></li>
+        <li>"Where the honest answer is 'it depends', we will say so — and then tell you exactly what it depends on."<span class="wen">— 最高级的官话：承认"看情况"，再讲清"取决于什么"——诚实版 it depends，比硬编答案可信得多</span></li>
+      </ul>
     </div>
     <div class="src">使用纪律 — ①绝不说 "no comment"（永远用"不在评论位置 + 原因 + 能说的"替代）；②绝不说 "off the record"；③不猜数字、不代言政府意图（slide 8）；④官话的功能是守住尊重与边界，事实桥接才拿分；⑤中性表述的主语永远用公司/港口/贸易——"China values cooperation"要说成"our company is a product of that cooperation"，不替国家表态；⑥不用 win-win、shared future 等口号直译——观感是宣传不是回答；⑦每句中性话后面尽快接一个可核查事实（六年第一大伙伴 · 35 年 · 57 码头 · 100+ 国家）。<span class="wen">Ground rules: never "no comment" (always: not in a position + reason + what you can say); never "off the record"; no invented numbers; no speaking for the government. The boilerplate holds the line — the bridge to facts wins the point.</span></div>
-  </div>
+    <details class="fold"><summary>▸ 他国失败案例 · 应答框架 OTHER COUNTRIES' FAILURES — how to answer any "X country failed" question（点击展开）</summary>
+    <ul>
+      <li><b>框架一 · 法律各国不同</b>：每个法域一部自己的法——比利时是比利时的、希腊是希腊的、汉堡是德国法+联邦审查+共决制。"different countries, different laws, different structures" 先立住，再谈个案。<span class="wen">Framework 1 — laws differ: every jurisdiction has its own law; this deal sits inside German screening, cabinet conditions and co-determination. Establish that first, then discuss the case.</span></li>
+      <li><b>框架二 · 换位与自省</b>：不否认、不甩锅——先给失败的诚实解读（货随联盟走、危机中的控股难局），再邀请对方把问题也问向自己："这个教训对我们意味着什么？"<span class="wen">Framework 2 — reflect, don't deflect: concede the honest reading of the failure (cargo follows alliances; a controlling stake in a crisis is hard), then invite the mirror question: what does that lesson mean for us here?</span></li>
+      <li><b>样本翻面</b>：57 个码头持股、多数合作续约——单一失败不是均值；用大样本回应个案。<span class="wen">Flip the sample: 57 terminals, most partnerships renewed — one failure is not the average.</span></li>
+      <li><b>落回汉堡事实</b>：所有框架最终落回"汉堡按汉堡的事实评判"——24.99%、运营隔离、开放承诺。<span class="wen">Land on Hamburg: every framework ends at "Hamburg will be judged on Hamburg's facts" — 24.99%, operational separation, open access.</span></li>
+    </ul>
+    </details>
+    </div>
+  </details>
 
   <div class="method">
     <h4>DAY 4 METHOD STRIP — 记者会现场纪律（slide 8 原版）</h4>
@@ -509,16 +552,23 @@
     <span class="fbtn" data-ax="th" data-f="jobs">Jobs</span>
     <span class="fbtn" data-ax="th" data-f="plans">Plans &amp; value</span>
     <span class="fbtn" data-ax="th" data-f="process">Process &amp; record</span>
+    <span class="fbtn" data-ax="th" data-f="precedent">Other countries' failures · NEW</span>
     <span class="fbtn" data-ax="core" data-f="core" id="coreTgl">★ Core 8 only</span>
-    <span class="progress" id="qprog">practiced 0 / 19</span>
+    <span class="progress" id="qprog">practiced 0 / 23</span>
     <span class="fbtn" id="revealAll" style="margin-left:8px">翻开全部</span>
     <span class="fbtn" id="hideAll">合上全部</span>
   </div>
 
+  <div class="qsearch">
+    <input type="text" id="qfind" placeholder="🔍 搜索问题关键词 / search questions — e.g. trust, Piraeus, stake, jobs, Scholz, CORE 02…" autocomplete="off">
+    <span class="qs-hint">live filter · 匹配问题与标签 · matches question text &amp; tags · Esc 清除</span>
+  </div>
+  <div class="nohit" id="qnohit">No match — try a shorter keyword (e.g. "trust", "data", "jobs") or press ESC to clear. 无匹配：换更短的关键词，或按 ESC 清空。</div>
+
   <div class="qa-grid" id="qagrid">
 
-    <div class="qgroup" data-g="g-public">
-      <div class="gh"><span class="gh-t">German public &amp; media</span><span class="gh-zh">德国公众与媒体 — sovereignty, jobs, "what are you hiding"</span><span class="gh-n"></span></div>
+    <div class="qgroup" data-g="g-public" id="grp-g-public">
+      <div class="gh"><span class="gh-t">German public &amp; media</span><span class="gh-zh">德国公众与媒体 — sovereignty, jobs, "what are you hiding"</span><span class="gh-n"></span><a class="ganchor" href="#grp-g-public" title="jump/copy link"> §</a></div>
 
       <div class="qa core" data-th="control">
         <div class="tags"><span class="t hot">CORE 01</span><span class="t">control / sovereignty</span><span class="t">EN·中</span></div>
@@ -540,10 +590,17 @@
         <div class="a"><div class="say">"Success needs evidence at terminal level: additional cargo, service performance, financial returns and employment outcomes. <b>Growth across the entire Port of Hamburg cannot, by itself, establish the contribution of this investment.</b>"</div>
         <div class="strat"><b>STRAT · EN</b> Tighten the attribution standard yourself — falsifiability buys credibility; close on evidence.<br><b>战术 · 中</b> 主动收紧归因标准（全港增长≠本投资贡献）——用可证伪性买公信力。</div></div>
       </div>
-    </div>
+    
+      <div class="qa new" data-th="process">
+        <div class="tags"><span class="t hot">NEW · EN 01</span><span class="t">SOE trust — the public version</span></div>
+        <div class="q">"Why should the public trust a Chinese state-owned company?"</div>
+        <div class="a"><div class="say">"Trust should not depend on assurances alone. It should be based on enforceable limits, German and European regulation, independent oversight, transparent reporting, cybersecurity controls, and the continued authority of German institutions."</div>
+        <div class="strat"><b>STRAT · EN</b> The user's own answer, verbatim — it is the strongest version: trust = architecture, not promises. Six nouns carry it (enforceable limits · German and European regulation · independent oversight · transparent reporting · cybersecurity controls · continued authority of German institutions) — deliver them as a measured list, [SLOW] on "enforceable". Pairs with EXT 06 (International media): same theme, that one adds the legal + throughput-economics structure.<br><b>战术 · 中</b> 用户原句直接采用——信任=制度架构而非承诺。六个名词逐个放慢念出；[SLOW] 落在 "enforceable"。与 EXT 06 互补：本题给公众版框架，EXT 06 给法律+经济结构版。</div></div>
+      </div>
+</div>
 
-    <div class="qgroup" data-g="g-gov">
-      <div class="gh"><span class="gh-t">German Federal Government &amp; Ministries</span><span class="gh-zh">德国联邦政府与部委 — screening integrity, precedent, rule consistency</span><span class="gh-n"></span></div>
+    <div class="qgroup" data-g="g-gov" id="grp-g-gov">
+      <div class="gh"><span class="gh-t">German Federal Government &amp; Ministries</span><span class="gh-zh">德国联邦政府与部委 — screening integrity, precedent, rule consistency</span><span class="gh-n"></span><a class="ganchor" href="#grp-g-gov" title="jump/copy link"> §</a></div>
 
       <div class="qa core" data-th="process">
         <div class="tags"><span class="t hot">CORE 06</span><span class="t">discrimination / 35→24.99</span></div>
@@ -557,10 +614,17 @@
         <div class="q">Why 24.99% and not 25? Was this structured to dodge our review?</div>
         <div class="a"><div class="say">We negotiated 35% in good faith. The government defined the perimeter; we accepted it. 24.99% is not below review — the transaction was reviewed in full under the AWV. It is below the statutory blocking-rights threshold, which is a choice Germany wrote into law. Any future change of control triggers review again.</div></div>
       </div>
-    </div>
+    
+      <div class="qa new" data-th="control">
+        <div class="tags"><span class="t hot">NEW · EN 02</span><span class="t">Future stake increase?</span></div>
+        <div class="q">"Could COSCO demand a larger stake later?"</div>
+        <div class="a"><div class="say">"Any future change in ownership or rights would require a separate review under applicable German and European rules. This transaction does not create an automatic right to increase COSCO's influence."</div>
+        <div class="strat"><b>STRAT · EN</b> User's answer, verbatim, two sentences — brevity IS the point (Brevity reads as competence, method strip). Answer first ("a separate review"), then the principle ("no automatic right"). If pressed "would you want more?": "We negotiated 35, we signed 24.99 — our word is on the document, and any change would go through the same review that produced it."<br><b>战术 · 中</b> 用户原句两句话——简洁即能力。先给答案（单独审查）再给原则（无自动权利）；若追问"想不想要更多"："我们谈的是 35，签的是 24.99——白纸黑字，任何变更都要走产生它的同一套审查。"</div></div>
+      </div>
+</div>
 
-    <div class="qgroup" data-g="g-reg">
-      <div class="gh"><span class="gh-t">Regulators &amp; security authorities</span><span class="gh-zh">监管与安全机构（BSI）— critical infrastructure, data, incident reporting</span><span class="gh-n"></span></div>
+    <div class="qgroup" data-g="g-reg" id="grp-g-reg">
+      <div class="gh"><span class="gh-t">Regulators &amp; security authorities</span><span class="gh-zh">监管与安全机构（BSI）— critical infrastructure, data, incident reporting</span><span class="gh-n"></span><a class="ganchor" href="#grp-g-reg" title="jump/copy link"> §</a></div>
 
       <div class="qa core" data-th="data">
         <div class="tags"><span class="t hot">CORE 03</span><span class="t">data security / BSI</span></div>
@@ -576,8 +640,8 @@
       </div>
     </div>
 
-    <div class="qgroup" data-g="g-city">
-      <div class="gh"><span class="gh-t">City of Hamburg &amp; local politics</span><span class="gh-zh">汉堡市与地方政界 — Hanseatic ownership, the port's identity</span><span class="gh-n"></span></div>
+    <div class="qgroup" data-g="g-city" id="grp-g-city">
+      <div class="gh"><span class="gh-t">City of Hamburg &amp; local politics</span><span class="gh-zh">汉堡市与地方政界 — Hanseatic ownership, the port's identity</span><span class="gh-n"></span><a class="ganchor" href="#grp-g-city" title="jump/copy link"> §</a></div>
 
       <div class="qa ext" data-th="control">
         <div class="tags"><span class="t">EXT 03 · City / opposition</span><span class="t">sell-out charge</span></div>
@@ -586,8 +650,8 @@
       </div>
     </div>
 
-    <div class="qgroup" data-g="g-labor">
-      <div class="gh"><span class="gh-t">Works council &amp; employees</span><span class="gh-zh">劳资会与员工 — jobs, terms, who decides</span><span class="gh-n"></span></div>
+    <div class="qgroup" data-g="g-labor" id="grp-g-labor">
+      <div class="gh"><span class="gh-t">Works council &amp; employees</span><span class="gh-zh">劳资会与员工 — jobs, terms, who decides</span><span class="gh-n"></span><a class="ganchor" href="#grp-g-labor" title="jump/copy link"> §</a></div>
 
       <div class="qa core" data-th="jobs">
         <div class="tags"><span class="t hot">CORE 04</span><span class="t">jobs / works council</span></div>
@@ -597,8 +661,8 @@
       </div>
     </div>
 
-    <div class="qgroup" data-g="g-greek">
-      <div class="gh"><span class="gh-t">Greek stakeholders — the Piraeus jury · NEW</span><span class="gh-zh">希腊相关方 — 比雷埃夫斯的陪审团：投资给希腊带来了什么（利与弊）、劳工记录、对本次收购后的计划</span><span class="gh-n"></span></div>
+    <div class="qgroup" data-g="g-greek" id="grp-g-greek">
+      <div class="gh"><span class="gh-t">Greek stakeholders — the Piraeus jury · NEW</span><span class="gh-zh">希腊相关方 — 比雷埃夫斯的陪审团：投资给希腊带来了什么（利与弊）、劳工记录、对本次收购后的计划</span><span class="gh-n"></span><a class="ganchor" href="#grp-g-greek" title="jump/copy link"> §</a></div>
 
       <div class="qa new" data-th="process">
         <div class="tags"><span class="t hot">NEW · GR 01</span><span class="t">Piraeus impact — good &amp; bad</span></div>
@@ -627,10 +691,17 @@
         <div class="a"><div class="say">"No — they serve different trades. Piraeus is the Mediterranean gateway and a transshipment hub for Asia routes; Hamburg is the North European gateway for Central European cargo and Europe's largest rail port. The network grows with total demand — in 2025 both ports grew. We invest in nodes because customers need reliability at both ends, not because one steals from the other."</div>
         <div class="strat"><b>STRAT · EN</b> Kill the zero-sum frame with geography: different gateways, different trades, both grew in 2025. Facts end conspiracy.<br><b>战术 · 中</b> 用地理杀死零和叙事：不同门户、不同航线、2025 两港双增——事实终结阴谋论。</div></div>
       </div>
-    </div>
+    
+      <div class="qa new" data-th="precedent">
+        <div class="tags"><span class="t hot">NEW · PY 02</span><span class="t">Piraeus — the record abroad as a warning?</span></div>
+        <div class="q">"Greek dockers called early conditions at Piraeus 'sweatshop-like', and local communities complained for years. Isn't that record exactly why countries should be careful with COSCO?"</div>
+        <div class="a"><div class="say">"We respect that question — it deserves a straight answer, not a deflection. Start with the framework: Piraeus was a controlling stake under Greek law, in the middle of a debt crisis; Hamburg is a minority stake under German law, with HHLA operating and the works council in place — different countries, different laws, different structures. On the record itself: the early years saw real friction — labor conditions, safety complaints, community tension. Conditions then improved substantially: pay agreements, safety programs, local hiring, and volumes that rose from 1.5 to 3.7 million TEU. And we learned — local management, local hiring, listening earlier. So I would put the question back, respectfully: the lesson of Piraeus is not 'be careful with COSCO'; it is 'set the framework right, and the investment delivers'. That is exactly what Germany has done here — and why we accepted it."</div>
+        <div class="strat"><b>STRAT · EN</b> Concede the record straight (no deflection), then split frameworks (Greek crisis + controlling stake vs German law + minority + co-determination), then reframe the lesson: the warning is not about COSCO, it is about frameworks — and Germany's framework is the answer. Close by tying it back to the 24.99% acceptance.<br><b>战术 · 中</b> 先直面记录不回避；再切割框架（希腊危机+控股 vs 德国法+少数股权+共决制）；最后重述教训——比港的警告不是"小心 COSCO"，而是"把框架设对，投资就能兑现"；德国恰恰做到了，这正是我们接受 24.99% 的原因。</div></div>
+      </div>
+</div>
 
-    <div class="qgroup" data-g="g-eu">
-      <div class="gh"><span class="gh-t">EU &amp; policy watchers</span><span class="gh-zh">欧盟与政策观察者 — dependence, pattern, the Russia analogy</span><span class="gh-n"></span></div>
+    <div class="qgroup" data-g="g-eu" id="grp-g-eu">
+      <div class="gh"><span class="gh-t">EU &amp; policy watchers</span><span class="gh-zh">欧盟与政策观察者 — dependence, pattern, the Russia analogy</span><span class="gh-n"></span><a class="ganchor" href="#grp-g-eu" title="jump/copy link"> §</a></div>
 
       <div class="qa core" data-th="dependence">
         <div class="tags"><span class="t hot">CORE 02</span><span class="t">dependence / Russia analogy</span></div>
@@ -646,8 +717,8 @@
       </div>
     </div>
 
-    <div class="qgroup" data-g="g-media">
-      <div class="gh"><span class="gh-t">International media</span><span class="gh-zh">国际媒体 — the Scholz question, SOE trust, geopolitics</span><span class="gh-n"></span></div>
+    <div class="qgroup" data-g="g-media" id="grp-g-media">
+      <div class="gh"><span class="gh-t">International media</span><span class="gh-zh">国际媒体 — the Scholz question, SOE trust, geopolitics</span><span class="gh-n"></span><a class="ganchor" href="#grp-g-media" title="jump/copy link"> §</a></div>
 
       <div class="qa core" data-th="dependence">
         <div class="tags"><span class="t hot">CORE 07</span><span class="t">geopolitics / deterioration</span></div>
@@ -667,10 +738,17 @@
         <div class="q">You are state-owned. Beijing could direct you. Why should anyone trust "no control"?</div>
         <div class="a"><div class="say">Two answers. First, legal: the contract bars control — no blocking minority, no operational role, no data access — and German law re-engages at any change. Second, structural: our economics here are throughput economics. Using a container terminal against its owner's interest destroys the value we paid for. Trust is not a press release; it is the record — invite scrutiny of Piraeus, Zeebrugge and now Hamburg.</div></div>
       </div>
-    </div>
+    
+      <div class="qa new" data-th="precedent">
+        <div class="tags"><span class="t hot">NEW · PY 01</span><span class="t">Zeebrugge — the port authority walked away</span></div>
+        <div class="q">"In Belgium, the Zeebrugge port authority publicly blamed your CSP terminal for falling cargo volumes and chose not to renew cooperation. If your own host partner in Belgium calls the investment a failure, why should Hamburg expect a different outcome?"</div>
+        <div class="a"><div class="say">"Every port, and every legal framework, is different — and that is precisely the point. Belgium's framework is Belgium's; this transaction is governed by German law, screened by the German government, and conditioned by the cabinet's own decision. On Zeebrugge: we hold a majority in CSP and we remain its largest customer by far; cargo follows trade lanes and alliances, not ownership — that is the honest reading of what happened there. And we hold ourselves to the same test we invite here: judge the operation by its published numbers. But I would also gently turn the question around: the fair comparison is not one terminal in one country — it is how we behaved in each of the fifty-seven ports where we are a shareholder. In most of them, the partnership was renewed. Hamburg will be judged on Hamburg's facts, under Hamburg's laws — and on that record we are confident."</div>
+        <div class="strat"><b>STRAT · EN</b> Three moves: (1) laws and frameworks differ by country — Belgium is not Germany, this deal sits inside German screening and conditions; (2) give the honest reading of the failure itself (alliances reshaped trade lanes; volumes follow cargo, not ownership) without blaming the host; (3) turn the sample size around — 57 ports, most partnerships renewed — then land on "Hamburg will be judged on Hamburg's facts".<br><b>战术 · 中</b> 三步：①各国法律框架不同——比利时不是德国，本交易在德国审查与条件之内；②对该失败给出诚实解读（联盟改航线、货随联盟走，不甩锅东道方）；③把样本翻过来——57 个码头多数续约——最后落回"汉堡按汉堡的事实被评判"。</div></div>
+      </div>
+</div>
 
-    <div class="qgroup" data-g="g-host">
-      <div class="gh"><span class="gh-t">Professor &amp; class</span><span class="gh-zh">教授与课堂 — course framing</span><span class="gh-n"></span></div>
+    <div class="qgroup" data-g="g-host" id="grp-g-host">
+      <div class="gh"><span class="gh-t">Professor &amp; class</span><span class="gh-zh">教授与课堂 — course framing</span><span class="gh-n"></span><a class="ganchor" href="#grp-g-host" title="jump/copy link"> §</a></div>
 
       <div class="qa ext" data-th="process">
         <div class="tags"><span class="t">EXT 07 · Professor / theory</span><span class="t">course framing</span></div>
@@ -724,7 +802,7 @@
   </div>
 
   <footer>
-    PMBA6127 · COSCO × HHLA Press-Conference Companion · v1.3 bilingual · scenario locked: press conference late Oct 2022 · universal response + phrase bank + neutral-ground section · 2026-10-04<br>
+    PMBA6127 · COSCO × HHLA Press-Conference Companion · v1.3 bilingual · scenario locked: press conference late Oct 2022 · universal response + phrase bank + neutral ground + failure precedents (PY 01-02) + EN 01-02 + search &amp; collapsed answers · neutral ground E2 case-by-case · playbook &amp; universal response folded by default · 2026-10-04<br>
     Sources: Schütz &amp; Halanyk (2025) ACRC case 19pp · Day 4 deck slides 8-9, 23-24 (LSE EUROPP 22 Sep 2025; Port of Hamburg 19 Feb 2026) · Speech body ≈830 words ≈ 6:20 @130wpm (DOCX full version 1,040 · 8:00)
   </footer>
 </section>
@@ -785,12 +863,18 @@
   var cards=[].slice.call(document.querySelectorAll('.qa'));
   var groups=[].slice.call(document.querySelectorAll('.qgroup'));
   var prog=document.getElementById('qprog');
-  var fAud='all', fTh='all', coreOnly=false;
+  var fAud='all', fTh='all', coreOnly=false, qFind='';
+  var findEl=document.getElementById('qfind');
+  function norm(x){return (x||'').toLowerCase()}
   function visible(c){
     if(coreOnly && !c.classList.contains('core')) return false;
     var g=c.closest('.qgroup');
     if(fAud!=='all' && (!g || g.getAttribute('data-g')!==fAud)) return false;
     if(fTh!=='all' && c.getAttribute('data-th')!==fTh) return false;
+    if(qFind){
+      var hay=norm(c.querySelector('.q').textContent+' '+(c.getAttribute('data-th')||'')+' '+c.querySelector('.tags').textContent+' '+(g?norm(g.querySelector('.gh-t').textContent):''));
+      if(hay.indexOf(qFind)<0) return false;
+    }
     return true;
   }
   function apply(){
@@ -800,8 +884,15 @@
       var lab=g.querySelector('.gh-n'); if(lab) lab.textContent=n? n+' question'+(n>1?'s':'') : '';
       g.style.display=n?'':'none';
     });
+    updNoHit();
   }
   function upd(){prog.textContent='practiced '+cards.filter(function(c){return c.classList.contains('open')}).length+' / '+cards.length}
+  var nohit=document.getElementById('qnohit');
+  function updNoHit(){nohit.style.display=cards.some(visible)?'none':'block'}
+  if(findEl){
+    findEl.addEventListener('input',function(){qFind=norm(findEl.value.trim());apply();updNoHit()});
+    findEl.addEventListener('keydown',function(e){if(e.key==='Escape'){findEl.value='';qFind='';apply();updNoHit();findEl.blur()}});
+  }
   cards.forEach(function(c){c.addEventListener('click',function(e){
     if(e.target.closest('.strat'))return;
     c.classList.toggle('open');upd();
